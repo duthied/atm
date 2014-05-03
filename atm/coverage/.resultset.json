@@ -1,0 +1,27 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/devlon/Sites/personal/src/yolo-octo-bebo/atm/app/controllers/login_controller.rb": [
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/devlon/Sites/personal/src/yolo-octo-bebo/atm/app/controllers/application_controller.rb": [
+        1,
+        null,
+        null,
+        1,
+        null
+      ],
+      "/Users/devlon/Sites/personal/src/yolo-octo-bebo/atm/spec/views/login/index.html.erb_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        null
+      ]
+    },
+    "timestamp": 1399151925
+  }
+}
