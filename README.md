@@ -24,6 +24,8 @@ Start the server
 rails server
 ```
 
+Connection to the Bank server is defined in `Rails.application.config` variable in the appropriate environment's config file (config/environments/development, etc.)
+
 ### Interfaces
 
 #### Web-Client
