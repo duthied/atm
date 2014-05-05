@@ -11,8 +11,11 @@
     <% end %>
   </div>
   
-  <div class="col-md-4 center">
+  <div class="col-md-4 center well">
     <h4>Select an Account</h4>
+    <% @accounts.each do |account| %>
+      <div><%= link_to "#{account['title']} - #{number_to_currency(account['balance'], :unit => '$')}", account_show_path(account['id']) %></div>
+    <% end %>
   </div>
   
   <div class="col-md-4 center">

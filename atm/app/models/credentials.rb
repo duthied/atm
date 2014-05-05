@@ -1,12 +1,11 @@
-# /atm/app/models/user.rb
-class User
+# /atm/app/models/credentials.rb
+class Credentials
 
-  attr_writter :card_number, :pin
+  attr_reader :card_number, :pin
 
   def initialize(card_number, pin)
     @card_number = card_number
     @pin = pin
-    self
   end
 
 end

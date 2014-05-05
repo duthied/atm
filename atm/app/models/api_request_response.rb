@@ -7,7 +7,7 @@ class APIRequestResponse
   def initialize(success, data = nil, error = nil)
     @success = success
     @error = error
-    @data = data
+    @data = JSON.parse data if data
   end
 
   def success?
