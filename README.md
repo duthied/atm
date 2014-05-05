@@ -41,3 +41,5 @@ See 'Web-Client'
 
 ### TODO
 A Postgres database is configured but not yet used.  This db could be used to cache the results pulled from the Bank server in a case where the Bank server is unavailable.  Withdraws would not be allowed but the data that was cached would be readable.
+
+Test coverage is poor, needs improvement.  I haven't had much experience with mocking/stubbing api calls which are critical in this app.
