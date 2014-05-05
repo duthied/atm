@@ -4,7 +4,13 @@ require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 require 'shoulda/matchers'
 require 'simplecov'
+require 'webmock/rspec'
+WebMock.disable_net_connect!(allow_localhost: true)
 SimpleCov.start
+
+# Spec::Runner.configure do |config|
+#   config.include WebMock
+# end
 
 require "codeclimate-test-reporter"
 CodeClimate::TestReporter.start

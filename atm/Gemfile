@@ -61,7 +61,7 @@ group :test do
   gem 'capybara-webkit'
   gem 'selenium-webdriver'
   gem 'headless'
-  gem 'fakeredis'
+  gem 'webmock'
 end
 
 group :production do
