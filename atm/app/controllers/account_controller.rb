@@ -12,6 +12,9 @@ class AccountController < ApplicationController
   def withdraw
     credentials = get_credentials
     response = WithdrawAPIRequest.call(credentials, params[:amount], params[:endpoint])
+
+    @result = response.data['response']['result'] ? "Success" : "Failure"
+    @balance = response.data['response']['balance']
   end
 
   private 

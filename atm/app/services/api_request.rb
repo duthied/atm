@@ -6,14 +6,12 @@ class APIRequest
 
   def self.request_get(uri, card_number, pin)
     endpoint = URI.parse(uri)
-    # http = Net::HTTP.new(endpoint.host, endpoint.port)
     request = create_request_get(endpoint, card_number, pin)
     make_request(Net::HTTP.new(endpoint.host, endpoint.port), request)
   end
 
   def self.request_post(uri, params, card_number, pin)
     endpoint = URI.parse(uri)
-    # http = Net::HTTP.new(endpoint.host, endpoint.port)
     request = create_request_post(endpoint, card_number, pin)
     request.set_form_data(params)
     make_request(Net::HTTP.new(endpoint.host, endpoint.port), request)
