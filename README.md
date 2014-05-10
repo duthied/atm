@@ -1,6 +1,5 @@
 ATM
 ==============
-[![Code Climate](https://codeclimate.com/github/duthied/yolo-octo-bebo.png)](https://codeclimate.com/github/duthied/yolo-octo-bebo) [![Test Coverage](https://codeclimate.com/github/duthied/yolo-octo-bebo/coverage.png)](https://codeclimate.com/github/duthied/yolo-octo-bebo)
 
 This is a simple ATM client written in Ruby on Rails (v.4.0.4).
 
