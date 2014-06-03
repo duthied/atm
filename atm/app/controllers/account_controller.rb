@@ -12,7 +12,7 @@ class AccountController < ApplicationController
   end
 
   def withdraw
-    credentials = get_credentials
+    credentials = find_credentials
     response = WithdrawAPIRequest
       .call(credentials, params[:amount], params[:endpoint])
 
@@ -23,12 +23,12 @@ class AccountController < ApplicationController
   private
 
   def find_accounts
-    credentials = get_credentials
+    credentials = find_credentials
     AccountsAPIRequest.call(credentials).data
   end
 
   def find_account(id)
-    credentials = get_credentials
+    credentials = find_credentials
     response = AccountsAPIRequest.call(credentials)
     response.data.find { |h| h['id'] == id.to_i }
   end

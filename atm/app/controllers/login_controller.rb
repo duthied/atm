@@ -1,6 +1,6 @@
 # /atm/app/controllers/login_controller.rb
 class LoginController < ApplicationController
-  
+
   def index
   end
 
@@ -10,7 +10,7 @@ class LoginController < ApplicationController
     if response.success?
       set_credentials(response.data['card_number'], response.data['pin'])
 
-      flash[:notice] = "Login Successful"
+      flash[:notice] = 'Login Successful'
       redirect_to account_index_path
     else
       # bad auth
