@@ -1,33 +1,36 @@
+# Account controller
 class AccountController < ApplicationController
-  
+
   def index
-    @accounts = get_accounts
+    @accounts = find_accounts
   end
 
   def show
-    @account = get_account(params[:id])
-    @withdraw_uri = @account['links'].find { |h| h['type'] == "withdraw" }['uri']
+    @account = find_account(params[:id])
+    @withdraw_uri = @account['links']
+      .find { |h| h['type'] == 'withdraw' }['uri']
   end
 
   def withdraw
     credentials = get_credentials
-    response = WithdrawAPIRequest.call(credentials, params[:amount], params[:endpoint])
+    response = WithdrawAPIRequest
+      .call(credentials, params[:amount], params[:endpoint])
 
-    @result = response.data['response']['result'] ? "Success" : "Failure"
+    @result = response.data['response']['result'] ? 'Success' : 'Failure'
     @balance = response.data['response']['balance']
   end
 
-  private 
+  private
 
-    def get_accounts
-      credentials = get_credentials
-      AccountsAPIRequest.call(credentials).data
-    end
+  def find_accounts
+    credentials = get_credentials
+    AccountsAPIRequest.call(credentials).data
+  end
 
-    def get_account(id)
-      credentials = get_credentials
-      response = AccountsAPIRequest.call(credentials)
-      response.data.find { |h| h['id'] == id.to_i }
-    end
+  def find_account(id)
+    credentials = get_credentials
+    response = AccountsAPIRequest.call(credentials)
+    response.data.find { |h| h['id'] == id.to_i }
+  end
 
 end
