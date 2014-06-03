@@ -27,5 +27,5 @@ Atm::Application.configure do
   # number of complex assets.
   config.assets.debug = true
 
-  config.bank_url = "http://localhost:3000"
+  config.bank_url = "http://bank.local:3002"
 end
